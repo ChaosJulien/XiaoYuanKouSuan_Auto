@@ -110,7 +110,7 @@ ChaosJulien@163.com
 <!-- links -->
 [your-project-path]:/ChaosJulien/XiaoYuanKouSuan_Auto
 [contributors-shield]: https://img.shields.io/github/contributors/ChaosJulien/XiaoYuanKouSuan_Auto.svg?style=flat-square
-[contributors-url]: https://github.com/shaojintian/Best_README_template/graphs/contributors
+[contributors-url]: https://github.com/ChaosJulien/XiaoYuanKouSuan_Auto/pulse
 [forks-shield]: https://img.shields.io/github/forks/ChaosJulien/XiaoYuanKouSuan_Auto.svg?style=flat-square
 [forks-url]: https://github.com/shaojintian/Best_README_template/network/members
 [stars-shield]: https://img.shields.io/github/stars/ChaosJulien/XiaoYuanKouSuan_Auto.svg?style=flat-square
