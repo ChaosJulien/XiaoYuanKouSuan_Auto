@@ -66,14 +66,16 @@ def draw_comparison(numbers):
     not_found_count = 0  
 
 def draw_greater_than(origin_x, origin_y, size):
-    pyautogui.moveTo(origin_x, origin_y)
-    pyautogui.dragRel(size, size, duration=0.05)
-    pyautogui.dragRel(-size, size, duration=0.05)
+    pyautogui.mouseDown(origin_x, origin_y)
+    pyautogui.moveTo(origin_x + size, origin_y + size, duration=0.02)
+    pyautogui.moveTo(origin_x, origin_y + size, duration=0.02)
+    pyautogui.mouseUp()
 
 def draw_less_than(origin_x, origin_y, size):
-    pyautogui.moveTo(origin_x + size, origin_y)
-    pyautogui.dragRel(-size, size, duration=0.05)
-    pyautogui.dragRel(size, size, duration=0.05)
+    pyautogui.mouseDown(origin_x + size, origin_y)
+    pyautogui.moveTo(origin_x, origin_y + size, duration=0.02)
+    pyautogui.moveTo(origin_x + size, origin_y + size, duration=0.02)
+    pyautogui.mouseUp()
 
 def main():
     keyboard.add_hotkey('=', lambda: sys.exit("进程已结束")) #默认退出快捷键是“=”
