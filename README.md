@@ -114,7 +114,7 @@ ChaosJulien@163.com
 [forks-shield]: https://img.shields.io/github/forks/ChaosJulien/XiaoYuanKouSuan_Auto.svg?style=flat-square
 [forks-url]: https://github.com/shaojintian/Best_README_template/network/members
 [stars-shield]: https://img.shields.io/github/stars/ChaosJulien/XiaoYuanKouSuan_Auto.svg?style=flat-square
-[stars-url]: https://github.com/shaojintian/Best_README_template/stargazers
+[stars-url]: https://github.com/ChaosJulien/XiaoYuanKouSuan_Auto/stargazers
 [issues-shield]: https://img.shields.io/github/issues/ChaosJulien/XiaoYuanKouSuan_Auto.svg?style=flat-square
 [issues-url]: https://img.shields.io/github/issues/shaojintian/Best_README_template.svg
 [license-shield]: https://img.shields.io/github/license/ChaosJulien/XiaoYuanKouSuan_Auto.svg?style=flat-square
