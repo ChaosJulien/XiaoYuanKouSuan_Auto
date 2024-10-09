@@ -57,7 +57,7 @@
 ###### **安装步骤**
 
 1. 在[Python](https://www.python.org/) 下载对应Python版本
-2. 在[Github](https://github.com/tesseract-ocr/tesseract)下载Windows版本，并安装中文语言确保最佳兼容性
+2. 在[tesseract](https://github.com/tesseract-ocr/tesseract)下载Windows版本，并安装中文语言确保最佳兼容性
 3. 下载[小猿搜题.py](https://github.com/ChaosJulien/XiaoYuanKouSuan_Auto/blob/main/%E5%B0%8F%E7%8C%BF%E6%90%9C%E9%A2%98.py)
 4. 安装所需的Python库
 ```python
