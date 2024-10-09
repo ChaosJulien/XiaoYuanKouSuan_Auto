@@ -118,7 +118,7 @@ ChaosJulien@163.com
 [issues-shield]: https://img.shields.io/github/issues/ChaosJulien/XiaoYuanKouSuan_Auto.svg?style=flat-square
 [issues-url]: https://img.shields.io/github/issues/shaojintian/Best_README_template.svg
 [license-shield]: https://img.shields.io/github/license/ChaosJulien/XiaoYuanKouSuan_Auto.svg?style=flat-square
-[license-url]: https://github.com/shaojintian/Best_README_template/blob/master/LICENSE.txt
+[license-url]: https://github.com/ChaosJulien/XiaoYuanKouSuan_Auto/LICENSE
 
 
 
