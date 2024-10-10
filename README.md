@@ -44,10 +44,22 @@
 - [鸣谢](#鸣谢)
 
 ### 上手指南
+使用`BlueStacks`模拟器运行Android虚拟机 </br>
+使用`BlueStacks脚本管理器`手写录入`>` `<`的输入内容并调整至5倍速 </br>
+![](https://github.com/ChaosJulien/XiaoYuanKouSuan_Auto/blob/main/image/example2.png) </br>
+将其绑定热键至`,` `.` </br>
+```python
+def draw_greater_than(origin_x, origin_y, size):
+    pyautogui.press(".")
 
-请确保基于Windows进行编译
-拥有一台有MIUI+或小米妙想功能的手机
-桌面操作系统中安装了MIUI+或小米电脑管家，并能成功将手机投屏至桌面端
+def draw_less_than(origin_x, origin_y, size):
+    pyautogui.press(",")
+```
+
+
+>请确保基于Windows进行编译 </br>
+ 拥有一台有MIUI+或小米妙想功能的手机</br>
+ 桌面操作系统中安装了MIUI+或小米电脑管家，并能成功将手机投屏至桌面端</br>
 
 ###### 开发前的配置要求
 
@@ -64,7 +76,8 @@
 pip install opencv-python pyautogui pytesseract keyboard numpy
 ```
 5. 调整第9行代码路径为你的tesseract安装路径
-6. 根据你的所属位置进行调整
+6. 根据你的所属位置进行调整,如下图所示 </br>
+![](https://github.com/ChaosJulien/XiaoYuanKouSuan_Auto/blob/main/image/example1.png)
 
 
 ### 使用到的框架
