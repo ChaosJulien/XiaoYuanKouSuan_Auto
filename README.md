@@ -1,15 +1,8 @@
 
 
-# XiaoYuanKouSuan_Auto
+# XiaoYuanKouSuan_Auto_Mac
 
-用于小猿口算的基于Python的自动答题工具
-
-
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
+用于小猿口算的基于Python的自动答题工具(Mac适配版)
 
 <!-- PROJECT LOGO -->
 <br />
@@ -18,7 +11,7 @@
 
   <h3 align="center">“小猿口算自动答题器”</h3>
   <p align="center">
-    用于小猿口算的基于Python的自动答题工具
+    用于小猿口算的基于Python的自动答题工具（Mac）
     <br />
     <a href="https://github.com/ChaosJulien/XiaoYuanKouSuan_Auto"><strong>探索本项目的文档 »</strong></a>
     <br />
@@ -45,9 +38,9 @@
 
 ### 上手指南
 
-请确保基于Windows进行编译
-拥有一台有MIUI+或小米妙想功能的手机
-桌面操作系统中安装了MIUI+或小米电脑管家，并能成功将手机投屏至桌面端
+- 请确保基于Mac进行编译
+- 使用iPhone镜像以及Mac安装ipa应用都可
+
 
 ###### 开发前的配置要求
 
@@ -56,8 +49,8 @@
 
 ###### **安装步骤**
 
-1. 在[Python](https://www.python.org/) 下载对应Python版本
-2. 在[tesseract](https://github.com/tesseract-ocr/tesseract)下载Windows版本，并安装中文语言确保最佳兼容性
+1. 在 [Python](https://www.python.org/) 下载对应Python版本
+2. 使用 brew 安装 tesseract
 3. 下载[小猿搜题.py](https://github.com/ChaosJulien/XiaoYuanKouSuan_Auto/blob/main/%E5%B0%8F%E7%8C%BF%E6%90%9C%E9%A2%98.py)
 4. 安装所需的Python库
 ```python
@@ -70,7 +63,7 @@ pip install opencv-python pyautogui pytesseract keyboard numpy
 ### 使用到的框架
 
 - [Python](https://www.python.org/)
-- [tesseract][(https://github.com/tesseract-ocr/tesseract)
+- [tesseract](https://github.com/tesseract-ocr/tesseract)
 
 ### 贡献者
 
@@ -91,7 +84,8 @@ pip install opencv-python pyautogui pytesseract keyboard numpy
 
 ### 作者
 
-ChaosJulien@163.com
+ChaosJulien@163.com (原作者)
+liwq6688@qq.com (Mac适配作者)
 
 ### 版权说明
 
@@ -105,7 +99,7 @@ ChaosJulien@163.com
 - [Choose an Open Source License](https://choosealicense.com)
 - [GitHub Pages](https://pages.github.com)
 - [Animate.css](https://daneden.github.io/animate.css)
-- [xxxxxxxxxxxxxx](https://connoratherton.com/loaders)
+
 
 <!-- links -->
 [your-project-path]:/ChaosJulien/XiaoYuanKouSuan_Auto
