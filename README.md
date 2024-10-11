@@ -57,9 +57,7 @@ def draw_less_than(origin_x, origin_y, size):
 ```
 
 
->请确保基于Windows进行编译 </br>
- 拥有一台有MIUI+或小米妙想功能的手机</br>
- 桌面操作系统中安装了MIUI+或小米电脑管家，并能成功将手机投屏至桌面端</br>
+
 
 ###### 开发前的配置要求
 
@@ -71,11 +69,18 @@ def draw_less_than(origin_x, origin_y, size):
 1. 在[Python](https://www.python.org/) 下载对应Python版本
 2. 在[tesseract](https://github.com/tesseract-ocr/tesseract)下载Windows版本，并安装中文语言确保最佳兼容性
 3. 下载[小猿搜题.py](https://github.com/ChaosJulien/XiaoYuanKouSuan_Auto/blob/main/%E5%B0%8F%E7%8C%BF%E6%90%9C%E9%A2%98.py)
-4. 安装所需的Python库
-```python
-pip install opencv-python pyautogui pytesseract keyboard numpy
+4. 安装所需的Python库（有两种安装命令，第一种是安装速度更快的清华大学镜像源，第二种是官方镜像源）👇无论哪个都行，反正选一个
+
+清华大学镜像源
+```bash
+pip install -i https://pypi.tuna.tsinghua.edu.cn/simple opencv-python numpy pyautogui pytesseract keyboard
 ```
-5. 调整第9行代码路径为你的tesseract安装路径
+官方镜像源
+```bash
+pip install opencv-python numpy pyautogui pytesseract keyboard
+```
+5. 调整第9行代码路径为你的tesseract安装路径</br>
+![](https://github.com/ChaosJulien/XiaoYuanKouSuan_Auto/blob/main/image/example3.png)
 6. 根据你的所属位置进行调整,如下图所示 </br>
 ![](https://github.com/ChaosJulien/XiaoYuanKouSuan_Auto/blob/main/image/example1.png)
 
