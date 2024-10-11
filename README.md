@@ -1,5 +1,3 @@
-![image](https://github.com/user-attachments/assets/7b3c2c67-7e7c-4a38-a972-3c572617dced)
-
 # XiaoYuanKouSuan_Auto
 
 用于小猿口算的基于Python的自动答题工具
@@ -20,6 +18,7 @@
   <p align="center">
     用于小猿口算的基于Python的自动答题工具</br>
     该项目没有修改任何小猿口算数据，仅使用tesseract文本识别(OCR)引擎进行视觉识别，我对B站锁定我视频表示抗议（BV1kc2NY6Ey1）
+    ![image](https://github.com/user-attachments/assets/7b3c2c67-7e7c-4a38-a972-3c572617dced)
     <br />
     <a href="https://github.com/ChaosJulien/XiaoYuanKouSuan_Auto"><strong>探索本项目的文档 »</strong></a>
     <br />
