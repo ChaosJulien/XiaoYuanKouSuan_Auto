@@ -88,7 +88,7 @@ pip install opencv-python numpy pyautogui pytesseract keyboard
 ### 使用到的框架
 
 - [Python](https://www.python.org/)
-- [tesseract][(https://github.com/tesseract-ocr/tesseract)
+- [tesseract](https://github.com/tesseract-ocr/tesseract)
 
 ### 贡献者
 
