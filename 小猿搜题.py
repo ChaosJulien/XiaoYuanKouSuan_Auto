@@ -6,7 +6,7 @@ import keyboard
 import sys
 import time
 
-pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe' # 设置 Tesseract-OCR 的路径
+pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'  # 设置 Tesseract-OCR 的路径
 
 # 跟踪状态的变量
 not_found_count = 0
@@ -14,16 +14,23 @@ last_not_found_time = 0
 last_numbers = None  # 存储上次识别的数字
 skip_count = 0  # 跳过次数计数器
 
+# 设置Tesseract-OCR的配置，以优化识别速度和准确度
+tesseract_config = "--psm 6 -c tessedit_char_whitelist=0123456789"
+
+
 def capture_area():
     region = (84, 336, 411, 55)  # (x, y, width, height) 详情如何配置可以看 (https://github.com/ChaosJulien/XiaoYuanKouSuan_Auto/blob/main/image/example1.png)
     screenshot = pyautogui.screenshot(region=region)
     return np.array(screenshot)
 
+
 def recognize_numbers(image):
     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-    _, thresh = cv2.threshold(gray, 150, 255, cv2.THRESH_BINARY)
-    text = pytesseract.image_to_string(thresh, config='--psm 6')
+    blurred = cv2.GaussianBlur(gray, (3, 3), 0)  # 使用高斯模糊减少噪声
+    _, thresh = cv2.threshold(blurred, 150, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)  # 使用Otsu's方法自动计算阈值
+    text = pytesseract.image_to_string(thresh, config=tesseract_config)
     return [int(s) for s in text.split() if s.isdigit()]
+
 
 def handle_insufficient_numbers():
     global not_found_count, last_not_found_time
@@ -40,12 +47,14 @@ def handle_insufficient_numbers():
         time.sleep(0.3)
         main()
 
+
 def click_buttons():
     pyautogui.click(280, 840)  # 点击“开心收下”按钮
     time.sleep(0.3)
     pyautogui.click(410, 990)  # 点击“继续”按钮
     time.sleep(0.3)
     pyautogui.click(280, 910)  # 点击“继续PK”按钮
+
 
 def draw_comparison(numbers):
     global not_found_count, last_numbers, skip_count
@@ -69,6 +78,7 @@ def draw_comparison(numbers):
     last_numbers = numbers  # 更新上次识别的数字
     skip_count = 0  # 重置跳过次数
 
+
 def execute_drawing_logic(numbers):
     first, second = numbers[:2]  # 获取前两个数字
     print(f"识别的数字: {first}, {second}")
@@ -80,11 +90,14 @@ def execute_drawing_logic(numbers):
         print(f"{first} < {second}")
         draw_less_than()
 
+
 def draw_greater_than():
     pyautogui.press(".")  # BlueStacks中的大于号快捷键
 
+
 def draw_less_than():
     pyautogui.press(",")  # BlueStacks中的小于号快捷键
+
 
 def main():
     keyboard.add_hotkey('=', lambda: sys.exit("进程已结束"))  # 默认的退出快捷键
@@ -94,9 +107,10 @@ def main():
             image = capture_area()  # 截取屏幕区域
             numbers = recognize_numbers(image)  # 从截取的图像中识别数字
             draw_comparison(numbers)  # 比较并绘制结果
-           # time.sleep(0.01)
+            time.sleep(0.05)  # 降低循环频率以提高性能
     except SystemExit as e:
         print(e)
+
 
 if __name__ == "__main__":
     main()  # 启动主程序
