@@ -6,7 +6,7 @@ import keyboard
 import sys
 import time
 
-pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe' # 设置 Tesseract-OCR 的路径
+pytesseract.pytesseract.tesseract_cmd = r'C:\Tesseract-OCR\tesseract.exe'  # 设置 Tesseract-OCR 的路径
 
 # 跟踪状态的变量
 not_found_count = 0
@@ -15,15 +15,18 @@ last_numbers = None  # 存储上次识别的数字
 skip_count = 0  # 跳过次数计数器
 
 def capture_area():
-    region = (84, 336, 411, 55)  # (x, y, width, height) 详情如何配置可以看 (https://github.com/ChaosJulien/XiaoYuanKouSuan_Auto/blob/main/image/example1.png)
+    region = (450, 400, 500, 200)  # (x, y, width, height)
     screenshot = pyautogui.screenshot(region=region)
-    return np.array(screenshot)
+    screenshot = np.array(screenshot)
+    screenshot = cv2.cvtColor(screenshot, cv2.COLOR_RGB2BGR)  # 转换为 BGR 格式以便后续处理
+    return screenshot
 
 def recognize_numbers(image):
     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
     _, thresh = cv2.threshold(gray, 150, 255, cv2.THRESH_BINARY)
     text = pytesseract.image_to_string(thresh, config='--psm 6')
-    return [int(s) for s in text.split() if s.isdigit()]
+    numbers = [int(s) for s in text.split() if s.isdigit()]  # 仅保留数字
+    return numbers
 
 def handle_insufficient_numbers():
     global not_found_count, last_not_found_time
@@ -94,7 +97,7 @@ def main():
             image = capture_area()  # 截取屏幕区域
             numbers = recognize_numbers(image)  # 从截取的图像中识别数字
             draw_comparison(numbers)  # 比较并绘制结果
-           # time.sleep(0.01)
+            # time.sleep(0.01)
     except SystemExit as e:
         print(e)
 
