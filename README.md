@@ -1,6 +1,6 @@
 # XiaoYuanKouSuan_Auto
 
-用于 **小猿口算** 的 Python 自动答题辅助工具（基于 OCR 视觉识别）
+用于小猿口算的基于 Python 的自动答题工具（OCR 视觉识别）
 
 [![Contributors](https://img.shields.io/github/contributors/ChaosJulien/XiaoYuanKouSuan_Auto.svg?style=flat-square)](https://github.com/ChaosJulien/XiaoYuanKouSuan_Auto/pulse)
 [![Forks](https://img.shields.io/github/forks/ChaosJulien/XiaoYuanKouSuan_Auto.svg?style=flat-square)](https://github.com/ChaosJulien/XiaoYuanKouSuan_Auto/network/members)
@@ -12,108 +12,49 @@
 
 ## 📌 项目简介
 
-**XiaoYuanKouSuan_Auto** 是一个基于 **Python + Tesseract OCR** 的视觉识别自动答题工具，  
-通过 **屏幕识别 + 自动化输入** 的方式，辅助完成小猿口算中的简单算术与大小比较题目。
+**“小猿口算自动答题器”**
 
-> ⚠️ **重要说明**
->
-> - 本项目 **不会修改、注入或篡改** 小猿口算客户端或服务器数据  
-> - 所有操作均基于 **模拟器画面识别与人工交互模拟**
-> - 本项目仅用于 **技术研究 / OCR / 自动化实验学习**
-> - **禁止用于商业用途或恶意刷榜行为**
-> - 使用本项目所产生的一切后果 **由使用者自行承担**
+用于 **小猿口算** 的 Python 自动化答题工具，  
+基于 **Tesseract OCR 文本识别 + 模拟人工输入** 实现。
 
----
+> 本项目不会修改或注入小猿口算任何程序数据，  
+> 仅通过 **屏幕识别 + 自动化交互** 完成操作。
 
-## 🧩 功能特性
+本人对 **B 站锁定相关技术演示视频** 表示抗议  
+（BV1kc2NY6Ey1）
 
-- 📷 基于 **Tesseract OCR** 的题目识别
-- ➕➖✖➗ 支持基础算术识别
-- 🔺🔻 支持 `>` `<` 比较题（通过按键映射）
-- 🖥 适配 **BlueStacks 模拟器**
-- ⚡ 快速自动输入，减少重复操作
+![image](https://github.com/user-attachments/assets/7b3c2c67-7e7c-4a38-a972-3c572617dced)
+
+🔗 项目地址：  
+👉 https://github.com/ChaosJulien/XiaoYuanKouSuan_Auto
 
 ---
 
-## 🧰 运行环境要求
+## 📚 目录
 
-### 系统要求
-- Windows 10 / 11（**仅支持 Windows**）
-- 推荐使用 **BlueStacks 模拟器**
-
-### Python 环境
-- Python **3.12.x**（开发版本：3.12.5）
-
-### 依赖组件
-- Tesseract OCR（需安装中文语言包）
-
----
-
-## 🚀 安装与配置
-
-### 1️⃣ 安装 Python
-前往官网下载并安装：
-👉 https://www.python.org/
-
-安装时请勾选 **Add Python to PATH**
+- [上手指南](#上手指南)
+- [开发前的配置要求](#开发前的配置要求)
+- [安装步骤](#安装步骤)
+- [使用到的框架](#使用到的框架)
+- [贡献者](#贡献者)
+- [作者](#作者)
+- [版权说明](#版权说明)
+- [鸣谢](#鸣谢)
 
 ---
 
-### 2️⃣ 安装 Tesseract OCR（Windows）
+## 🚀 上手指南
 
-下载地址：
-👉 https://github.com/tesseract-ocr/tesseract
+- 使用 **BlueStacks 模拟器** 运行 Android 虚拟机  
+- 通过 **BlueStacks 脚本管理器** 录制 `>` `<` 手写输入  
+- 设置为 **5 倍速**
+- 绑定热键：
+  - `.` → `>`
+  - `,` → `<`
 
-安装时请注意：
-- 勾选 **中文语言包（chi_sim）**
-- 记住安装路径（后续要用）
+示例图：
 
----
-
-### 3️⃣ 下载项目脚本
-
-直接下载主脚本文件：
-
-👉 [小猿搜题.py](https://github.com/ChaosJulien/XiaoYuanKouSuan_Auto/blob/main/%E5%B0%8F%E7%8C%BF%E6%90%9C%E9%A2%98.py)
-
-本项目为 **单文件脚本，无需额外工程结构**
-
----
-
-### 4️⃣ 安装 Python 依赖库
-
-#### 推荐（清华大学镜像，速度快）
-```bash
-pip install -i https://pypi.tuna.tsinghua.edu.cn/simple opencv-python numpy pyautogui pytesseract keyboard
-````
-
-#### 官方源
-
-```bash
-pip install opencv-python numpy pyautogui pytesseract keyboard
-```
-
----
-
-### 5️⃣ 配置 Tesseract 路径
-
-打开 `小猿搜题.py`，修改以下路径为你本地的 Tesseract 安装路径：
-
-```python
-pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
-```
-
----
-
-### 6️⃣ BlueStacks 输入映射设置
-
-* 使用 **BlueStacks 脚本管理器**
-* 录制手写输入 `>` 与 `<`
-* 设置为 **5 倍速**
-* 绑定热键：
-
-  * `.` → `>`
-  * `,` → `<`
+![example2](https://github.com/ChaosJulien/XiaoYuanKouSuan_Auto/blob/main/image/example2.png)
 
 示例代码：
 
@@ -123,60 +64,102 @@ def draw_greater_than(origin_x, origin_y, size):
 
 def draw_less_than(origin_x, origin_y, size):
     pyautogui.press(",")
+````
+
+---
+
+## ⚙️ 开发前的配置要求
+
+1. Python **3.12.5**
+2. Tesseract OCR（需安装中文语言包 `chi_sim`）
+3. Windows 系统（仅支持 Windows）
+
+---
+
+## 📦 安装步骤
+
+### 1️⃣ 安装 Python
+
+[https://www.python.org/](https://www.python.org/)
+
+---
+
+### 2️⃣ 安装 Tesseract OCR（Windows）
+
+[https://github.com/tesseract-ocr/tesseract](https://github.com/tesseract-ocr/tesseract)
+请确保安装 **中文语言包**
+
+---
+
+### 3️⃣ 下载脚本文件
+
+👉
+[https://github.com/ChaosJulien/XiaoYuanKouSuan_Auto/blob/main/%E5%B0%8F%E7%8C%BF%E6%90%9C%E9%A2%98.py](https://github.com/ChaosJulien/XiaoYuanKouSuan_Auto/blob/main/%E5%B0%8F%E7%8C%BF%E6%90%9C%E9%A2%98.py)
+
+---
+
+### 4️⃣ 安装依赖库
+
+清华源（推荐）：
+
+```bash
+pip install -i https://pypi.tuna.tsinghua.edu.cn/simple opencv-python numpy pyautogui pytesseract keyboard
+```
+
+官方源：
+
+```bash
+pip install opencv-python numpy pyautogui pytesseract keyboard
 ```
 
 ---
 
-## 🧠 技术原理简述
+### 5️⃣ 配置 Tesseract 路径
 
-1. 截取模拟器指定区域画面
-2. 使用 OpenCV 预处理图像
-3. 通过 Tesseract OCR 识别算式文本
-4. Python 解析并计算结果
-5. 使用 PyAutoGUI 模拟人工输入
+修改脚本第 9 行：
+
+![example3](https://github.com/ChaosJulien/XiaoYuanKouSuan_Auto/blob/main/image/example3.png)
+
+```python
+pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
+```
 
 ---
 
-## 🤝 参与贡献
+### 6️⃣ 调整识别区域
 
-欢迎提交 Issue / PR：
+根据你实际屏幕位置调整坐标：
 
-1. Fork 本项目
-2. 创建功能分支
+![example1](https://github.com/ChaosJulien/XiaoYuanKouSuan_Auto/blob/main/image/example1.png)
 
-   ```bash
-   git checkout -b feature/YourFeature
-   ```
-3. 提交修改
+---
 
-   ```bash
-   git commit -m "Add YourFeature"
-   ```
-4. 推送并发起 Pull Request
+## 🧰 使用到的框架
+
+* Python
+* Tesseract OCR
+* OpenCV
+* PyAutoGUI
 
 ---
 
 ## 👤 作者
 
-**ChaosJulien**
+ChaosJulien
 📧 [ChaosJulien@163.com](mailto:ChaosJulien@163.com)
-GitHub: [https://github.com/ChaosJulien](https://github.com/ChaosJulien)
 
 ---
 
-## 📄 许可证
+## 📄 版权说明
 
-本项目基于 **MIT License** 开源
+本项目基于 **MIT License**
 详见 [LICENSE](LICENSE)
 
 ---
 
 ## 🙏 鸣谢
 
-* Tesseract OCR
-* OpenCV
-* PyAutoGUI
-* GitHub Shields
-* 所有为本项目提出建议和 Issue 的朋友
-
-```
+* GitHub Emoji Cheat Sheet
+* Shields.io
+* Choose an Open Source License
+* GitHub Pages
